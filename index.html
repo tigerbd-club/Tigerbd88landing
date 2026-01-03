@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -37,11 +38,20 @@ h1{font-size:36px;color:#fff;margin-bottom:20px;}
 p{font-size:18px;color:#fff;margin-bottom:30px;line-height:1.5;}
 
 .btn{
-display:inline-block;padding:15px 35px;font-size:20px;font-weight:bold;
-border-radius:8px;text-decoration:none;background:#fff;color:#ff4500;
-margin:5px;transition:.3s;
+display:block;
+width:100%;
+max-width:300px;
+margin:10px auto;
+padding:15px;
+font-size:20px;
+font-weight:bold;
+border-radius:8px;
+text-decoration:none;
+background:#fff;
+color:#ff4500;
+transition:.3s;
 }
-.btn:hover{background:#ffe5d9;transform:scale(1.08);}
+.btn:hover{background:#ffe5d9;transform:scale(1.05);}
 
 .social-proof{
 background:#fff;padding:20px;border-radius:10px;margin-top:30px;
@@ -49,10 +59,16 @@ background:#fff;padding:20px;border-radius:10px;margin-top:30px;
 .social-proof h3{color:#ff4500;}
 .social-proof li{font-size:14px;color:#333;list-style:none;margin:4px 0;}
 
-@media(max-width:600px){
-h1{font-size:28px;}
-p{font-size:16px;}
-.btn{font-size:18px;padding:12px 25px;}
+.footer{
+text-align:center;
+margin:25px 0;
+font-size:14px;
+color:#fff;
+}
+.footer a{
+color:#fff;
+text-decoration:underline;
+margin:0 6px;
 }
 
 /* Popup Proof */
@@ -71,33 +87,13 @@ z-index:9999;
 display:flex;
 align-items:center;
 gap:10px;
-animation:slideUp .5s ease;
 }
-
 #proof-popup img{
 width:36px;
 height:36px;
 border-radius:50%;
 object-fit:cover;
 border:2px solid #ff4500;
-}
-
-@keyframes slideUp{
-from{transform:translateY(20px);opacity:0}
-to{transform:translateY(0);opacity:1}
-}
-
-/* Footer */
-.footer{
-text-align:center;
-margin:25px 0;
-font-size:14px;
-color:#fff;
-}
-.footer a{
-color:#fff;
-text-decoration:underline;
-margin:0 6px;
 }
 </style>
 </head>
@@ -113,9 +109,29 @@ margin:0 6px;
 <h1>Tigerbd88-এ ইন্টারেকটিভ গেম এক্সপ্লোর করুন!</h1>
 <p>আমাদের কমিউনিটিতে যোগ দিন এবং নিরাপদ, শিক্ষামূলক ও আকর্ষণীয় অভিজ্ঞতার অংশ হন।</p>
 
-<a href="#" class="btn" onclick="fbq('track','Lead');">গেম এক্সপ্লোর করুন</a>
-<a href="#" class="btn" onclick="fbq('track','Lead');">কমিউনিটিতে যোগ দিন</a>
-<a href="#" class="btn" onclick="fbq('track','Lead');">ডেমো চেষ্টা করুন</a>
+<!-- BUTTONS -->
+<a href="https://www.tigerbd88.com/signup" target="_blank"
+class="btn" onclick="fbq('track','Lead');">
+গেম এক্সপ্লোর করুন
+</a>
+
+<a href="https://t.me/t88bd" target="_blank"
+class="btn" onclick="fbq('track','Lead');">
+কমিউনিটিতে যোগ করুন
+</a>
+
+<!-- DEMO FORM -->
+<form action="mailto:empirebots144@gmail.com" method="post" enctype="text/plain"
+onsubmit="fbq('track','Lead');">
+<input type="text" name="name" placeholder="আপনার নাম" required
+style="width:100%;padding:12px;margin:6px 0;border-radius:6px;border:none;">
+<input type="email" name="email" placeholder="আপনার ইমেইল" required
+style="width:100%;padding:12px;margin:6px 0;border-radius:6px;border:none;">
+<textarea name="message" placeholder="ডেমোর জন্য লিখুন"
+style="width:100%;padding:12px;margin:6px 0;border-radius:6px;border:none;"></textarea>
+
+<button type="submit" class="btn">ডেমো চেষ্টা করুন</button>
+</form>
 
 <div class="social-proof">
 <h3>লাইভ কমিউনিটি অ্যাক্টিভিটি</h3>
@@ -126,13 +142,11 @@ margin:0 6px;
 </ul>
 </div>
 
-<!-- Footer links -->
 <div class="footer">
 <a href="privacy.html">Privacy Policy</a> |
 <a href="terms.html">Terms & Conditions</a> |
 <a href="contact.html">Contact</a>
 </div>
-
 </div>
 
 <!-- Popup -->
@@ -142,25 +156,22 @@ margin:0 6px;
 </div>
 
 <script>
-const proofData = [
- { text:"রিয়া, ঢাকা – ৫ মিনিট আগে যোগ দিয়েছেন", img:"https://i.pravatar.cc/100?img=47" },
- { text:"সুমন, চট্টগ্রাম – ৮ মিনিট আগে যোগ দিয়েছেন", img:"https://i.pravatar.cc/100?img=12" },
- { text:"নিশা, খুলনা – ১২ মিনিট আগে যোগ দিয়েছেন", img:"https://i.pravatar.cc/100?img=32" },
- { text:"আরিফ, ঢাকা – ৩ মিনিট আগে জয়েন করেছেন", img:"https://i.pravatar.cc/100?img=56" },
- { text:"তানভীর, সিলেট – ৯ মিনিট আগে যোগ দিয়েছেন", img:"https://i.pravatar.cc/100?img=18" }
+const proofData=[
+{text:"রিয়া, ঢাকা – ৫ মিনিট আগে যোগ দিয়েছেন",img:"https://i.pravatar.cc/100?img=47"},
+{text:"সুমন, চট্টগ্রাম – ৮ মিনিট আগে যোগ দিয়েছেন",img:"https://i.pravatar.cc/100?img=12"},
+{text:"নিশা, খুলনা – ১২ মিনিট আগে যোগ দিয়েছেন",img:"https://i.pravatar.cc/100?img=32"}
 ];
-
 let i=0;
 const popup=document.getElementById("proof-popup");
 const text=document.getElementById("proof-text");
 const avatar=document.getElementById("proof-avatar");
 
 function showProof(){
- text.innerText=proofData[i].text;
- avatar.src=proofData[i].img;
- popup.style.display="flex";
- setTimeout(()=>popup.style.display="none",4000);
- i=(i+1)%proofData.length;
+text.innerText=proofData[i].text;
+avatar.src=proofData[i].img;
+popup.style.display="flex";
+setTimeout(()=>popup.style.display="none",4000);
+i=(i+1)%proofData.length;
 }
 setInterval(showProof,7000);
 showProof();
