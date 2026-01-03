@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tigerbd88 ইন্টারেকটিভ</title>
+
+<!-- Facebook Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID_HERE'); 
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/>
+</noscript>
+
+<style>
+body, html { margin:0; padding:0; font-family: Arial,sans-serif; height:100%; overflow-x:hidden; }
+
+/* Video Background */
+.video-bg { position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1; }
+.overlay { position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index:1; }
+
+/* Container */
+.container { position:relative; z-index:2; max-width:600px; margin:auto; text-align:center;
+background: rgba(255,69,0,0.85); padding:40px 20px; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.3); }
+
+/* Text */
+h1 { font-size:36px; color:#fff; margin-bottom:20px; animation:fadeInDown 1s; }
+p { font-size:18px; color:#fff; margin-bottom:30px; line-height:1.5; animation:fadeIn 1.5s; }
+
+/* Buttons */
+.btn { display:inline-block; padding:15px 35px; font-size:20px; font-weight:bold; border-radius:8px; text-decoration:none;
+background:#fff; color:#ff4500; margin:5px; transition:0.3s; animation:pulse 2s infinite; }
+.btn:hover { background:#ffe5d9; color:#e03e00; transform:scale(1.1); }
+
+/* Social Proof Section */
+.social-proof { background: rgba(255,255,255,0.95); padding:20px; border-radius:10px; text-align:center; margin-top:30px; }
+.social-proof h3 { color:#ff4500; margin-bottom:10px; }
+.social-proof p { font-size:16px; margin:5px 0; }
+.social-proof ul { list-style:none; padding:0; margin-top:10px; }
+.social-proof li { font-size:14px; color:#333; margin:3px 0; }
+
+/* Animations */
+@keyframes fadeInDown { from {opacity:0; transform:translateY(-50px);} to{opacity:1; transform:translateY(0);} }
+@keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+@keyframes pulse {0%{transform:scale(1);}50%{transform:scale(1.05);}100%{transform:scale(1);} }
+
+@media(max-width:600px){h1{font-size:28px;}p{font-size:16px;}.btn{font-size:18px;padding:12px 25px;}}
+</style>
+</head>
+
+<body>
+
+<video autoplay muted loop class="video-bg">
+<source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+আপনার ব্রাউজার ভিডিও সাপোর্ট করে না।
+</video>
+
+<div class="overlay"></div>
+
+<div class="container">
+<h1>Tigerbd88-এ ইন্টারেকটিভ গেম এক্সপ্লোর করুন!</h1>
+<p>আমাদের কমিউনিটিতে যোগ দিন এবং নিরাপদ, শিক্ষামূলক ও আকর্ষণীয় অভিজ্ঞতার অংশ হয়ে উঠুন।</p>
+
+<!-- Multiple CTA Buttons -->
+<a href="https://www.tigerbd88.com/signup" onclick="fbq('track','Lead');" target="_blank" class="btn">গেম এক্সপ্লোর করুন</a>
+<a href="https://www.tigerbd88.com/community" onclick="fbq('track','Lead');" target="_blank" class="btn">কমিউনিটিতে যোগ দিন</a>
+<a href="https://www.tigerbd88.com/demo" onclick="fbq('track','Lead');" target="_blank" class="btn">ডেমো চেষ্টা করুন</a>
+
+<!-- Social Proof Section -->
+<div class="social-proof">
+<h3>আমাদের সম্প্রদায়ের সদস্য সংখ্যা</h3>
+<p>মোট কমিউনিটি মেম্বার: <span id="total-members">100,000+</span></p>
+<p>আজকে নতুন যোগ দিয়েছেন: <span id="today-joined">1,000+</span></p>
+<ul id="recent-users">
+<li>রিয়া, ঢাকা - ৫ মিনিট আগে যোগ হয়েছেন</li>
+<li>সুমন, চট্টগ্রাম - ১০ মিনিট আগে যোগ হয়েছেন</li>
+<li>নিশা, খুলনা - ১৫ মিনিট আগে যোগ হয়েছেন</li>
+</ul>
+</div>
+
+</div>
+
+<script>
+// AJAX ফাংশন ব্যবহার করে PHP থেকে ডেটা fetch করা যাবে
+function updateSocialProof(){
+    fetch('social_proof.php')
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById('today-joined').innerText = data.today + '+';
+        document.getElementById('total-members').innerText = data.total + '+';
+        const ul = document.getElementById('recent-users');
+        ul.innerHTML = '';
+        data.recent.forEach(user => {
+            const li = document.createElement('li');
+            li.innerText = user + ' - কিছু মিনিট আগে যোগ হয়েছেন';
+            ul.appendChild(li);
+        });
+    });
+}
+// প্রতি 30 সেকেন্ডে আপডেট
+setInterval(updateSocialProof, 30000);
+updateSocialProof();
+</script>
+
+</body>
+</html>
